@@ -1,0 +1,48 @@
+.error-label {
+  color: red;
+}
+
+.content-area {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+.instruction {
+  margin-bottom: 7%;
+}
+
+.submit-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  background-color: rgb(166, 166, 250);
+  border: rgb(166, 166, 250);
+  color: darkblue;
+}
+
+.submit-btn-filled {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  background-color: darkblue;
+  border: darkblue;
+  color: white;
+}
+
+.sign-in-p {
+  margin-top: 20%;
+}
+
+.input-cls {
+  color: darkblue;
+}
+
+.input-group-text {
+  background-color: transparent !important;
+}
+
+#password {
+  border-right: transparent !important;
+}

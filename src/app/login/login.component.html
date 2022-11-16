@@ -1,0 +1,68 @@
+<div>
+  <div class="content-area">
+    <div class="alert alert-danger" *ngIf="loginError">
+      {{ loginErrorText }}
+    </div>
+    <div class="alert alert-success" *ngIf="loginSuccess">Login successful</div>
+    <img src="../../assets/wissenlogo.png" />
+    <h6 class="instruction mt-4">Hello there, Sign In to Continue</h6>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email" class="mb-2">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          formControlName="email"
+          (change)="checkVal()"
+          class="form-control input-cls"
+        />
+      </div>
+      <label for="email" class="mb-2 mt-4">Password</label>
+      <div class="form-group input-group">
+        <input
+          type="{{ showPassword ? 'text' : 'password' }}"
+          name="password"
+          id="password"
+          formControlName="password"
+          (change)="checkVal()"
+          class="form-control input-cls"
+        />
+        <span
+          class="input-group-text"
+          id="basic-addon2"
+          (click)="togglePassword()"
+        >
+          <i
+            class="{{
+              showPassword
+                ? 'fa fa-eye-slash eye-icon-open'
+                : 'fa fa-eye eye-icon-closed'
+            }}"
+          ></i>
+        </span>
+      </div>
+      <div class="form-group mt-4">
+        <input type="checkbox" (change)="toggleEditable($event)" /> By creating
+        or logging into an account, you are agreeing with our
+        <b>Terms & Conditions</b> and <b>Privacy Policys</b>
+      </div>
+      <div class="form-group mt-4">
+        <button
+          class="btn btn-primary submit-btn {{
+            isFilled ? 'submit-btn-filled' : 'submit-btn'
+          }}"
+        >
+          <span
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+            *ngIf="loading"
+          ></span>
+          Next
+        </button>
+      </div>
+    </form>
+    <p class="text-center sign-in-p">Signin with company SSO</p>
+  </div>
+</div>
