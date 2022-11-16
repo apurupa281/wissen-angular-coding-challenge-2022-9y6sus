@@ -4,7 +4,7 @@
       {{ loginErrorText }}
     </div>
     <div class="alert alert-success" *ngIf="loginSuccess">Login successful</div>
-    <img src="../../assets/wissenlogo.png" />
+    <img [src]="transform()" />
     <h6 class="instruction mt-4">Hello there, Sign In to Continue</h6>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
